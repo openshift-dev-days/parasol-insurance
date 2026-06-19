@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "parasol-insurance-{{user_guid}}"
+  title: Parasol Insurance
+  description: Parasol Insurance Java application
+  annotations:
+    argocd/app-name: "{{user_guid}}-dev"
+    backstage.io/kubernetes-namespace: "{{user_guid}}-dev"
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=parasol-insurance
+    gitlab.com/project-slug: "{{user_guid}}/parasol-insurance"
+    sonarqube.org/project-key: "{{user_guid}}-parasol-insurance"
+  links:
+    - url: "https://devspaces.{{cluster_subdomain}}"
+      title: Dev Spaces
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:default/{{user_guid}}"
+  system: parasol-insurance
+  providesApis:
+    - parasol-insurance-api
