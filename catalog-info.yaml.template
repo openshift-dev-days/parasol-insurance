@@ -10,7 +10,7 @@ metadata:
     backstage.io/kubernetes-label-selector: "app.kubernetes.io/name=parasol-insurance-{{user_guid}}"
     janus-idp.io/tekton: parasol-insurance
     gitlab.com/project-slug: "{{user_guid}}/parasol-insurance"
-    sonarqube.org/project-key: "{{user_guid}}-parasol-insurance"
+    sonarqube.org/project-key: "parasol-insurance-{{user_guid}}"
   links:
     - url: "https://devspaces.{{cluster_subdomain}}"
       title: Dev Spaces
