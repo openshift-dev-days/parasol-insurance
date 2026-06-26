@@ -47,7 +47,7 @@ components:
       args:
         - '-c'
         - >-
-          mkdir -p /projects/.bin && cp /usr/bin/oc /projects/.bin/oc && cp /usr/bin/kubectl /projects/.bin/kubectl && if [[ -f ${HOME}/.kube/config ]]; then rm ${HOME}/.kube/config; fi ; if [[ -f /globalconfig/zoo-code-settings.json ]] ; then cp /globalconfig/zoo-code-settings.json /projects/zoo-code-settings.json ; sed -i "s|_LLM_BASE_URL_|${LLM_BASE_URL}|g" /projects/zoo-code-settings.json ; sed -i "s|_LLM_API_KEY_|${LLM_API_KEY}|g" /projects/zoo-code-settings.json
+          mkdir -p /projects/.bin && cp /usr/bin/oc /projects/.bin/oc && cp /usr/bin/kubectl /projects/.bin/kubectl && if [[ -f ${HOME}/.kube/config ]]; then rm ${HOME}/.kube/config; fi; if [[ -f /globalconfig/zoo-code-settings.json ]] ; then cp /globalconfig/zoo-code-settings.json /projects/zoo-code-settings.json ; fi ; sed -i "s|_LLM_BASE_URL_|${LLM_BASE_URL}|g" /projects/zoo-code-settings.json ; sed -i "s|_LLM_API_KEY_|${LLM_API_KEY}|g" /projects/zoo-code-settings.json
       command:
         - /bin/bash
       image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
@@ -57,10 +57,9 @@ components:
       memoryLimit: 256Mi
       cpuRequest: 10m
       cpuLimit: 200m
-      # Uncomment when we move away from UDI
-      # env:
-      # - name: HOME
-      #   value: "/projects"
+      env:
+      - name: HOME
+        value: "/home/user"
 commands:
   - apply:
       component: prep-workspace
