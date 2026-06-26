@@ -6,6 +6,8 @@ components:
     container:
       image: registry.redhat.io/devspaces/udi-rhel9:3.26.1
       env:
+        - name: VSCODE_DEFAULT_WORKSPACE
+          value: "$(PROJECT_SOURCE)/vscode.code-workspace"
         - name: QUARKUS_HTTP_HOST
           value: 0.0.0.0
         - name: MAVEN_OPTS

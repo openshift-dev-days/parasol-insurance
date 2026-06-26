@@ -13,7 +13,6 @@
 			"mhutchie.git-graph",
 			"eamodio.gitlens",
 			"streetsidesoftware.code-spell-checker",
-			"johnpapa.winteriscoming",
 			"sst-dev.opencode",
 			"zoocodeorganization.zoo-code",
 			"cnshenj.vscode-task-manager",
@@ -23,9 +22,7 @@
 		]
 	},
 	"settings": {
-		"workbench.colorTheme": "Winter is Coming (Light)",
-		"workbench.preferredDarkColorTheme": "Winter is Coming (Dark Blue)",
-		"workbench.preferredLightColorTheme": "Winter is Coming (Light)",
+		"workbench.colorTheme": "Default Dark Modern",
 		"editor.wordWrap": "on",
 		"files.autoSave": "off",
 		"zoo-code.autoImportSettingsPath": "/projects/zoo-code-settings.json",
