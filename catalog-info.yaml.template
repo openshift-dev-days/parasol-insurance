@@ -5,7 +5,7 @@ metadata:
   title: Parasol Insurance
   description: Parasol Insurance Java application
   annotations:
-    argocd/app-name: "{{user_guid}}-dev"
+    argocd/app-selector: app.kubernetes.io/instance={{user_guid}}-parasol-insurance
     backstage.io/kubernetes-id: parasol-insurance-{{user_guid}}
     backstage.io/kubernetes-label-selector: "app.kubernetes.io/name=parasol-insurance-{{user_guid}}"
     janus-idp.io/tekton: parasol-insurance
