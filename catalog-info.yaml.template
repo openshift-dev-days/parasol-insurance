@@ -19,7 +19,7 @@ spec:
   type: service
   lifecycle: production
   owner: "user:default/{{user_guid}}"
-  system: parasol-insurance
+  system: parasol-insurance-{{user_guid}}
   providesApis:
     - parasol-insurance-api-{{user_guid}}
 ---
@@ -33,7 +33,7 @@ spec:
   type: openapi
   lifecycle: production
   owner: "user:default/{{user_guid}}"
-  system: parasol-insurance
+  system: parasol-insurance-{{user_guid}}
   definition: |
     openapi: "3.0.0"
     info:
@@ -46,3 +46,12 @@ spec:
       /api/claims/{claimNumber}:
         get:
           summary: Get a claim by number
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: parasol-insurance-{{user_guid}}
+  title: Parasol Insurance
+  description: Parasol Insurance applications and API for {{user_guid}}
+spec:
+  owner: "user:default/{{user_guid}}"
